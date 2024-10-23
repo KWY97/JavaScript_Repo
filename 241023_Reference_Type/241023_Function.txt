@@ -127,7 +127,7 @@
    - 함수와의 사용 (오늘 배우는 것)
     1. 인자 확장 (함수 호출 시)
     ```
-     let numbers = [1, 2, 3]
+    let numbers = [1, 2, 3]
     let numbers2 = [1, 2]
     function myFunc(x, y, z) {
       return x + y + z
@@ -213,3 +213,50 @@
 
 *) 공부할 때 MDN 문서에서 예시코드 보고 작성해보는 식으로 하면 좋다.
    MDN 문서에는 세미콜론(';') 붙어 있는데 우리는 안쓸 것이니 그건 무시해도 된다.
+
+  
+<과제 풀다가 추가 (hw_3_2)>
+ - 선언식을 화살표 함수로 바꾸려면 표현식으로 변환한 후 해야함
+ ```
+    /*
+      - 아래 celsiusToFahrenheit 함수는 섭씨 온도를 화씨 온도로 바꾸는 함수이다.
+      - 선언식으로 작성된 함수를 "화살표 함수"로 다시 작성하시오.
+    */
+    // 선언식 
+    function celsiusToFahrenheit (celsius) {
+      return celsius * 9/5 + 32
+    }
+
+    //  1단계 - 표현식으로 바꾸기
+    const celsiusToFahrenheit1 = function (celsius) {
+      return celsius * 9/5 + 32
+    }
+
+    // 2단계 - function 키워드 제거, 화살표 작성
+    const celsiusToFahrenheit2 = (celsius) => {
+      return celsius * 9/5 + 32
+    }
+
+    // 3단계 - 매개변수가 하나 뿐이라면 () 제거
+    const celsiusToFahrenheit3 = celsius => {
+      return celsius * 9/5 + 32
+    }
+
+    // 4단계 - 표현식이 한 줄이라면 {}와 return 제거
+    const celsiusToFahrenheit4 = celsius => celsius * 9/5 + 32
+ ```
+
+ - 표현식으로 바꾸는 이유 (by.GPT)
+  선언식 함수를 화살표 함수로 바꾸기 위해 꼭 표현식으로 바꿔야 하는 것은 아닙니다. 
+  하지만, 화살표 함수는 변수에 할당하는 방식으로만 사용될 수 있기 때문에, 
+  자연스럽게 표현식으로 바꾸는 것이 일반적인 방법입니다.
+
+  - 이유: 화살표 함수는 선언식으로 사용 불가
+   - 함수 선언식은 function 키워드를 사용하여 함수를 직접 정의하는 방식이지만, 
+     화살표 함수는 const, let, 또는 var와 같은 변수에 할당하는 함수 표현식 형태로만 사용할 수 있습니다.
+
+  - 왜 꼭 표현식이어야 하는가?
+   - 화살표 함수는 이름을 가지지 않는 익명 함수로 설계되었습니다. 
+     즉, 함수 자체를 정의할 때는 이름을 붙이지 않고, 변수를 사용해 할당하는 것이죠.
+     선언식 함수는 이름을 가지고 있지만, 화살표 함수는 익명 함수이기 때문에 
+     이름을 직접 붙이는 방식(선언식)은 불가능합니다.
