@@ -3,7 +3,7 @@ JSON (JavaScript Object Notation)
  - JavaScript의 Object와 유사한 구조를 가지고 있지만 JSON은 형식이 있는 "문자열"
    (파이썬에서 dict나 list로 바꿔서 사용했음)
 
- - So, JavaScript에서 JSON을 사용하기 위해서는 Object 자로형으로 변경해야함
+ - So, JavaScript에서 JSON을 사용하기 위해서는 Object 자료형으로 변경해야함
 
  Object <-> JSON 변환하기
 
